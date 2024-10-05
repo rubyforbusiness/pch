@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_05_152624) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_05_163651) do
+  create_table "audits", force: :cascade do |t|
+    t.datetime "created_at"
+    t.integer "auditable_id"
+    t.string "auditable_type"
+    t.integer "project_id", null: false
+    t.index ["project_id"], name: "index_audits_on_project_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.integer "project_id", null: false
@@ -31,6 +39,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_05_152624) do
     t.index ["project_id"], name: "index_status_changes_on_project_id"
   end
 
+  add_foreign_key "audits", "projects"
   add_foreign_key "comments", "projects"
   add_foreign_key "status_changes", "projects"
 end

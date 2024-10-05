@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    project = Project.find(params[:project_id])
+    project = Project.where(id: params[:project_id]).first
     render Comments::NewView.new(comment: Comment.new(project: project))
   end
 
