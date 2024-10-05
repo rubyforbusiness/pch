@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :audits
   resources :status_changes
   resources :projects do
     resources :comments
