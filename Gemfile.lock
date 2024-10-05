@@ -1,3 +1,10 @@
+PATH
+  remote: /home/richard/code/phlex-rails
+  specs:
+    phlex-rails (1.2.2)
+      phlex (~> 1.11.0)
+      railties (>= 6.1, < 8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -160,6 +167,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    phlex (1.11.0)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -304,6 +312,7 @@ DEPENDENCIES
   factory_bot_rails
   importmap-rails
   jbuilder
+  phlex-rails!
   puma (>= 5.0)
   rails (~> 7.1.4)
   redis (>= 4.0.1)
