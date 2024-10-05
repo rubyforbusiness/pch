@@ -1,24 +1,21 @@
-# README
+# Project Conversation History (PCH)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails project for tracking comments against a project. It is a **prototype** only and not suitable for production.
 
-Things you may want to cover:
+## Startup
 
-* Ruby version
+`bin/rails s`
 
-* System dependencies
+## Usage
 
-* Configuration
+Projects: `localhost:3000/projects`
 
-* Database creation
+## Testing
 
-* Database initialization
+Unit tests:
 
-* How to run the test suite
+`bin/rails test`
 
-* Services (job queues, cache servers, search engines, etc.)
+System tests (browser based):
 
-* Deployment instructions
-
-* ...
+`bin/rails test:system`
