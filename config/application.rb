@@ -8,6 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Pch
   class Application < Rails::Application
+    config.autoload_paths.push(
+      "#{root}/app/views/components",
+      "#{root}/app/views",
+      "#{root}/app/views/layouts"
+    )
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 

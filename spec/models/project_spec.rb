@@ -57,4 +57,16 @@ RSpec.describe Project, type: :model do
 
     end
   end
+
+  context "relationships" do
+    let(:project) { create(:project) }
+    let(:comment1) { create(:comment, project: project) }
+    let(:comment2) { create(:comment, project: project) }
+    context "comments" do
+      subject { project.comments }
+      it "can have them" do
+        expect(subject).to eq [comment1, comment2]
+      end
+    end
+  end
 end
