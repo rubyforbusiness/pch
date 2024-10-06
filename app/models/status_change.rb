@@ -1,7 +1,12 @@
 class StatusChange < ApplicationRecord
   belongs_to :project
-  has_one :audit, as: :auditable
+  has_one :audit, as: :auditable, dependent: :destroy
+
   after_create :add_audit_record
+
+  def view_template
+    StatusChanges::StatusChangeView.new(status_change: self)
+  end
 
   private
 

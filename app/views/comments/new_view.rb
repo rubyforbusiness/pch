@@ -8,12 +8,6 @@ module Comments
       h1 { "New comment" }
 
       render Form.new(comment: comment)
-
-      br
-
-      div do
-        link_to "Back to comments", comments_path
-      end
     end
 
     private

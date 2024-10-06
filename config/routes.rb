@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :status_changes
   resources :projects do
     resources :comments
+    get "conversation_history", to: "conversation_history#index"
   end
   resources :comments
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

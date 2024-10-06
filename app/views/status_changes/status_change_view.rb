@@ -9,16 +9,8 @@ module StatusChanges
         p do
           strong { "From: " }
           plain status_change.from
-        end
-
-        p do
-          strong { "To: " }
+          strong(class: "pl-2") { "To: " }
           plain status_change.to
-        end
-
-        p do
-          strong { "Project: " }
-          plain status_change.project.name
         end
       end
     end

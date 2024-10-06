@@ -1,8 +1,15 @@
 class Comment < ApplicationRecord
   belongs_to :project
-  has_one :audit, as: :auditable
+  has_one :audit, as: :auditable, dependent: :destroy
+
+  validates_presence_of :text
 
   after_create :add_audit_record
+
+
+  def view_template
+    Comments::CommentView.new(comment: self)
+  end
 
   private
 

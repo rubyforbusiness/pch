@@ -6,15 +6,7 @@ module Comments
 
     def view_template
       div(id: (dom_id comment)) do
-        p do
-          strong { "Text: " }
-          plain comment.text
-        end
-
-        p do
-          strong { "Project: " }
-          plain comment.project_id
-        end
+        p(class: "italic") { comment.text }
       end
     end
 
