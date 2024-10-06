@@ -20,6 +20,11 @@ module Audits
           strong { "Auditable type: " }
           plain audit.auditable_type
         end
+
+        p do
+          strong { "Project: " }
+          plain audit.project.name
+        end
       end
     end
 

@@ -21,12 +21,12 @@ module Comments
         form.text_area :text
       end
 
-      div do
+      div(class: "hidden") do
         form.label :project_id, style: "display: block"
         form.text_field :project_id
       end
 
-        div { plain form.submit }
+      div { button { form.submit } }
       end
     end
 
